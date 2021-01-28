@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Volume of cylinder</title>
+    <link rel="stylesheet" href="{% static 'css/mathscript.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="formview">
+            <div class="banner">
+                VOLUME OF CYLINDER
+            </div>
+            <div class="content">
+                <form action="/mathcylinder/" method="GET">
+                    {% csrf_token %}
+                    <div class="forminput">
+                        <label for="value_radius">Radius=</label>
+                        <input type="text" name="value_radius" id="value_radius">
+                    </div>
+                    <div  class="forminput">
+                        <label for="value_height">Height=</label>
+                        <input type="text" name="value_height" id="value_height">
+                    </div>                    
+                    <div  class="forminput">
+                        <button type="button" name="button_calculate" id="button_calculate">Calculate</button>
+                    </div>
+                    <div  class="forminput">
+                        <label for="value_result">Result=</label>
+                        <input type="text" name="value_result" id="value_result" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/mathcylinder.js"></script>
+</body>
+
+</html>
